@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
+  toolBar: {
+    backgroundColor: '#ed1d24',
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -61,7 +64,7 @@ function Navigation(props) {
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar className={classes.toolBar}>
           <Typography variant="h6">
             <Link to="/" className={classes.link} component={RouterLink}>
               Marvel | Character Search
