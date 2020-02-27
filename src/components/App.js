@@ -1,13 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navigation from './navigation';
+import Dashboard from './dashboard';
+import About from './about';
 
 class App extends React.PureComponent {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          New Page
-        </header>
-      </div>
+      <Router>
+        <React.Fragment>
+          <Navigation />
+          <Switch>
+            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/about" component={About} />
+          </Switch>
+        </React.Fragment>
+      </Router>
     )
   }
 }
