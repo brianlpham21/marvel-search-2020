@@ -1,11 +1,12 @@
 import React from 'react';
+import NavPage from '../common/NavPage';
 
 class Dashboard extends React.PureComponent {
   render() {
     return (
-      <div>
+      <NavPage>
         Dashboard
-      </div>
+      </NavPage>
     )
   }
 }

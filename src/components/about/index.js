@@ -1,11 +1,12 @@
 import React from 'react';
+import NavPage from '../common/NavPage';
 
 class About extends React.PureComponent {
   render() {
     return (
-      <div>
-        About
-      </div>
+      <NavPage>
+        <h1>About</h1>
+      </NavPage>
     )
   }
 }

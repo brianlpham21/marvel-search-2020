@@ -4,6 +4,8 @@ import Navigation from './navigation';
 import Dashboard from './dashboard';
 import About from './about';
 
+import './styles/theme.scss';
+
 class App extends React.PureComponent {
   render() {
     return (
