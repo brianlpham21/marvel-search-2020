@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, InputBase, Link } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
@@ -41,12 +42,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1, 1, 1, 7),
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: 120,
-      '&:focus': {
-        width: 200,
-      },
-    },
   },
   link: {
     color: 'white',
@@ -60,6 +55,10 @@ const useStyles = makeStyles(theme => ({
 
 function Navigation(props) {
   const classes = useStyles();
+
+  const handleInput = (e) => {
+    props.onChange(e.keyCode, e.target.value);
+  }
 
   return (
     <div className={classes.root}>
@@ -81,6 +80,10 @@ function Navigation(props) {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
+              onKeyUp={(e) => handleInput(e)}
+              defaultValue={props.searchTerm}
+              key={props.searchTerm}
+              autoFocus
             />
           </div>
           <div className={classes.aboutLinkContainer}>
@@ -104,4 +107,4 @@ function Navigation(props) {
   );
 }
 
-export default Navigation;
+export default connect()(Navigation);

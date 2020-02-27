@@ -1,12 +1,12 @@
 const initialState = {
-  link: '',
+  searchTerm: '',
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'LOAD_CHARACTER_INFORMATION':
-      return { ...state, link: action.payload };
-    case 'CLEAR_CHARACTERS':
+    case 'UPDATE_SEARCH_TERM':
+      return { ...state, searchTerm: action.payload };
+    case 'CLEAR_SEARCH_TERM':
       return initialState;
     default:
       return state;
