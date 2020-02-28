@@ -26,10 +26,10 @@ function Dashboard() {
           <Grid item xs={12}>
             <Paper className={classes.paper}>Main Section</Paper>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={12} md={8} lg={9}>
             <Paper className={classes.paper}>Comic Appearances</Paper>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={12} md={4} lg={3}>
             <Paper className={classes.paper}>YouTube Videos</Paper>
           </Grid>
         </Grid>
