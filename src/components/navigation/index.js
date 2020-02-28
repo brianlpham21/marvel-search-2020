@@ -5,12 +5,17 @@ import { AppBar, Toolbar, Typography, InputBase, Link } from '@material-ui/core'
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
+import logo from '../../images/Marvel_Animation_Logo.jpg';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
   toolBar: {
     backgroundColor: '#ed1d24',
+  },
+  logo: {
+    height: '3rem',
   },
   search: {
     position: 'relative',
@@ -45,6 +50,9 @@ const useStyles = makeStyles(theme => ({
   },
   link: {
     color: 'white',
+    '&:hover': {
+      textDecoration: 'none',
+    }
   },
   aboutLinkContainer: {
     position: 'absolute',
@@ -66,8 +74,9 @@ function Navigation(props) {
         <Toolbar className={classes.toolBar}>
           <Typography variant="h6">
             <Link to="/" className={classes.link} component={RouterLink}>
-              Marvel | Character Search
+              <img class='logo' src={logo} className={classes.logo} alt='marvel-logo' />
             </Link>
+            <span className="ml-3">Character Search</span>
           </Typography>
           <div className={`ml-4 ${classes.search}`}>
             <div className={classes.searchIcon}>
