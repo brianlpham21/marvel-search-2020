@@ -16,6 +16,14 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     height: '3rem',
+    [theme.breakpoints.down('xs')]: {
+      height: '2rem',
+    },
+  },
+  navText: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   search: {
     position: 'relative',
@@ -58,6 +66,9 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     right: '0',
     paddingRight: '24px',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
   },
 }));
 
@@ -76,7 +87,7 @@ function Navigation(props) {
             <Link to="/" className={classes.link} component={RouterLink}>
               <img class='logo' src={logo} className={classes.logo} alt='marvel-logo' />
             </Link>
-            <span className="ml-3">Character Search</span>
+            <span className={`ml-3 ${classes.navText}`}>Character Search</span>
           </Typography>
           <div className={`ml-4 ${classes.search}`}>
             <div className={classes.searchIcon}>
