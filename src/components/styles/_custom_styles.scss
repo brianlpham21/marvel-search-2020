@@ -1,8 +1,10 @@
-* {
+html {
   margin: 0;
-  font-family: Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  height: 10000px
+  height: 10000px;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(250, 250, 250, 0.55)),
+               url('../../images/Marvel_Comic_BG.jpg');
 }
