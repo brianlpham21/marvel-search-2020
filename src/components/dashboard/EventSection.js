@@ -1,27 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Paper, CircularProgress } from '@material-ui/core';
+import { Paper, CircularProgress } from '@material-ui/core';
 
 class EventSection extends React.PureComponent {
   render() {
     if (this.props.eventsLoading) {
       return (
-        <Grid item xs={12}>
-          <Paper className={this.props.classStyle}>
-            <CircularProgress color="secondary" className="mt-2" />
-          </Paper>
-        </Grid>
+        <Paper className={this.props.classStyle}>
+          <CircularProgress color="secondary" className="mt-2" />
+        </Paper>
       )
     } else if (this.props.events.length === 0) { return null; }
 
     return (
-      <Grid item xs={12} md={8} lg={9}>
-        <Paper className={this.props.classStyle}>
-          {this.props.events.map((event) => {
-            return (<div>{event.title}</div>);
-          })}
-        </Paper>
-      </Grid>
+      <Paper className={this.props.classStyle}>
+        {this.props.events.map((event) => {
+          return (<div>{event.title}</div>);
+        })}
+      </Paper>
     );
   }
 }

@@ -17,6 +17,12 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  paperFluid: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    marginBottom: theme.spacing(2),
+  }
 }));
 
 function Dashboard() {
@@ -28,9 +34,11 @@ function Dashboard() {
         <Grid container spacing={3}>
           <CharactersSection classStyle={classes.paper} />
           <MainSection classStyle={classes.paper} />
-          <ComicSection classStyle={classes.paper} />
-          <EventSection classStyle={classes.paper} />
-          <YouTubeSection classStyle={classes.paper} />
+          <Grid item xs={12} md={8} lg={9}>
+            <ComicSection classStyle={classes.paperFluid} />
+            <EventSection classStyle={classes.paperFluid} />
+          </Grid>
+          <YouTubeSection classStyle={classes.paperFluid} />
         </Grid>
       </div>
     </NavPage>

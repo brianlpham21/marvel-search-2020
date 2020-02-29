@@ -3,6 +3,9 @@ const initialState = {
   comicsLoading: false,
   eventsLoading: false,
   videosLoading: false,
+  noComics: false,
+  noEvents: false,
+  noVideos: false,
   list: [],
   selectedCharacter: {},
   comics: [],
@@ -18,12 +21,24 @@ export default (state = initialState, action) => {
       const character = state.list.find((character) => character.id === action.payload);
       return { ...state, selectedCharacter: character, list: [] };
     }
-    case 'LOAD_COMICS':
-      return { ...state, comics: action.payload.data.results || [] };
-    case 'LOAD_EVENTS':
-      return { ...state, events: action.payload.data.results || [] };
-    case 'LOAD_VIDEOS':
-      return { ...state, ytVideos: action.payload.items || [] };
+    case 'LOAD_COMICS': {
+      let emptyStatus = false;
+      const { results } = action.payload.data;
+      if (results.length === 0) { emptyStatus = true; };
+      return { ...state, comics: results || [], noComics: emptyStatus };
+    }
+    case 'LOAD_EVENTS': {
+      let emptyStatus = false;
+      const { results } = action.payload.data;
+      if (results.length === 0) { emptyStatus = true; };
+      return { ...state, events: results || [], noEvents: emptyStatus };
+    }
+    case 'LOAD_VIDEOS': {
+      let emptyStatus = false;
+      const { items } = action.payload;
+      if (items.length === 0) { emptyStatus = true; };
+      return { ...state, ytVideos: items || [], noEvents: emptyStatus };
+    }
     case 'SET_CHARACTERS_LOADING':
       return { ...state, charactersLoading: action.payload };
     case 'SET_COMICS_LOADING':
