@@ -22,7 +22,18 @@ class CharactersSection extends React.PureComponent {
           </Paper>
         </Grid>
       )
-    } else if (this.props.characters.length === 0) { return null; }
+    } else if (this.props.characters.length === 0) {
+      if (this.props.noCharacters) {
+        return (
+          <Grid item xs={12}>
+            <Paper className={this.props.classStyle}>
+              No Characters Found.
+            </Paper>
+          </Grid>
+        )
+      }
+      return null;
+    }
 
     return (
       <Grid item xs={12}>
@@ -48,6 +59,7 @@ class CharactersSection extends React.PureComponent {
 const mapStateToProps = store => ({
   characters: store.characters.list,
   charactersLoading: store.characters.charactersLoading,
+  noCharacters: store.characters.noCharacters,
 });
 
 

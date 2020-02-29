@@ -24,6 +24,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
+    fontFamily: 'Marvel',
+    fontSize: '1.2em',
+    fontWeight: 'bold',
+    verticalAlign: 'middle',
   },
   search: {
     position: 'relative',
@@ -66,7 +70,10 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     '&:hover': {
       textDecoration: 'none',
-    }
+    },
+    fontFamily: 'Marvel',
+    fontSize: '1.2em',
+    fontWeight: 'bold',
   },
   aboutLinkContainer: {
     position: 'absolute',

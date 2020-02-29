@@ -1,5 +1,6 @@
 const initialState = {
   charactersLoading: false,
+  noCharacters: false,
   comicsLoading: false,
   eventsLoading: false,
   videosLoading: false,
@@ -15,8 +16,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'LOAD_CHARACTER_INFORMATION':
-      return { ...state, list: action.payload.data.results || [] };
+    case 'LOAD_CHARACTER_INFORMATION': {
+      let emptyStatus = false;
+      const { results } = action.payload.data;
+      if (results.length === 0) { emptyStatus = true; };
+      return { ...state, list: results || [], noCharacters: emptyStatus };
+    }
     case 'SET_SELECTED_CHARACTER': {
       const character = state.list.find((character) => character.id === action.payload);
       return { ...state, selectedCharacter: character, list: [] };
@@ -48,7 +53,7 @@ export default (state = initialState, action) => {
     case 'SET_VIDEOS_LOADING':
       return { ...state, videosLoading: action.payload };
     case 'CLEAR_CHARACTERS_LIST':
-      return { ...state, list: [] };
+      return { ...state, list: [], noCharacters: false };
     case 'CLEAR':
       return initialState;
     default:
