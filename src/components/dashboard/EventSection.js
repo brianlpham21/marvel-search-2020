@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Paper, CircularProgress } from '@material-ui/core';
 
-class ComicSection extends React.PureComponent {
+class EventSection extends React.PureComponent {
   render() {
-    if (this.props.comicsLoading) {
+    if (this.props.eventsLoading) {
       return (
         <Grid item xs={12}>
           <Paper className={this.props.classStyle}>
@@ -12,13 +12,13 @@ class ComicSection extends React.PureComponent {
           </Paper>
         </Grid>
       )
-    } else if (this.props.comics.length === 0) { return null; }
+    } else if (this.props.events.length === 0) { return null; }
 
     return (
       <Grid item xs={12} md={8} lg={9}>
         <Paper className={this.props.classStyle}>
-          {this.props.comics.map((comic) => {
-            return (<div>{comic.title}</div>);
+          {this.props.events.map((event) => {
+            return (<div>{event.title}</div>);
           })}
         </Paper>
       </Grid>
@@ -27,8 +27,8 @@ class ComicSection extends React.PureComponent {
 }
 
 const mapStateToProps = store => ({
-  comics: store.characters.comics,
-  comicsLoading: store.characters.comicsLoading,
+  events: store.characters.events,
+  eventsLoading: store.characters.eventsLoading,
 });
 
-export default connect(mapStateToProps)(ComicSection);
+export default connect(mapStateToProps)(EventSection);

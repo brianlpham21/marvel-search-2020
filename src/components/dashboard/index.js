@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import CharactersSection from './CharactersSection';
 import MainSection from './MainSection';
 import ComicSection from './ComicSection';
+import EventSection from './EventSection';
 import YouTubeSection from './YouTubeSection';
 
 const useStyles = makeStyles(theme => ({
@@ -28,6 +29,7 @@ function Dashboard() {
           <CharactersSection classStyle={classes.paper} />
           <MainSection classStyle={classes.paper} />
           <ComicSection classStyle={classes.paper} />
+          <EventSection classStyle={classes.paper} />
           <YouTubeSection classStyle={classes.paper} />
         </Grid>
       </div>

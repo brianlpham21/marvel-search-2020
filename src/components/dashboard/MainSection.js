@@ -9,7 +9,7 @@ class MainSection extends React.PureComponent {
       <Grid item xs={12}>
         <Paper className={this.props.classStyle}>
           {this.props.selectedCharacter.name}
-          <img src={this.props.selectedCharacter.thumbnail.path + '.' + this.props.selectedCharacter.thumbnail.extension} alt="hero" />
+          <img src={this.props.selectedCharacter.thumbnail.path + '.' + this.props.selectedCharacter.thumbnail.extension} alt="hero" style={{ height: '100px' }} />
         </Paper>
       </Grid>
     );

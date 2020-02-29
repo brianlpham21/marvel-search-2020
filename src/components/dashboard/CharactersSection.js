@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Paper, CircularProgress, Button } from '@material-ui/core';
-import { getCharacterComics } from '../../actions/characters';
+import { getCharacterComics, getCharacterEvents } from '../../actions/characters';
 
 class CharactersSection extends React.PureComponent {
   render() {
@@ -9,6 +9,7 @@ class CharactersSection extends React.PureComponent {
       this.props.dispatch({ type: 'SET_SELECTED_CHARACTER', payload: id });
       /* Make other calls for same character */
       getCharacterComics(id);
+      getCharacterEvents(id);
       this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' });
     }
 
