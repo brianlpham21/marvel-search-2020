@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, InputBase, Link } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, InputBase, Link, Button } from '@material-ui/core';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
@@ -56,6 +56,9 @@ const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create('width'),
     width: '100%',
   },
+  clearButton: {
+    color: 'rgba(255, 255, 255, 0.7) !important',
+  },
   link: {
     color: 'white',
     '&:hover': {
@@ -76,7 +79,7 @@ function Navigation(props) {
   const classes = useStyles();
 
   const handleInput = (e) => {
-    props.onChange(e.keyCode, e.target.value);
+    props.onChange(e.target.value);
   }
 
   return (
@@ -105,6 +108,9 @@ function Navigation(props) {
               key={props.searchTerm}
               autoFocus
             />
+            <Button className={classes.clearButton} onClick={props.onClear}>
+              Clear
+            </Button>
           </div>
           <div className={classes.aboutLinkContainer}>
             <Typography variant="h6">

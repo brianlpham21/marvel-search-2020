@@ -1,20 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Navigation from './Navigation';
+import { getCharacters } from '../../actions/characters';
 
 class NavigationContainer extends React.PureComponent {
   render() {
-    const handleInput = (key, value) => {
-      if (key === 13) {
-        console.log('search term against characters');
-        this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' })
-      } else {
+    const handleInput = (value) => {
+      if (value.length > 2) {
+        getCharacters(value);
         this.props.dispatch({ type: 'UPDATE_SEARCH_TERM', payload: value })
       };
     }
 
+    const handleClear = () => {
+      this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' })
+      this.props.dispatch({ type: 'CLEAR_CHARACTERS' })
+    }
+
     return (
-      <Navigation searchTerm={this.props.searchTerm} onChange={(key, value) => handleInput(key, value)} />
+      <Navigation
+        searchTerm={this.props.searchTerm}
+        onChange={(value) => handleInput(value)}
+        onClear={() => handleClear()}
+      />
     );
   }
 }

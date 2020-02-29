@@ -3,6 +3,7 @@ import NavPage from '../common/NavPage';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import CharactersSection from './CharactersSection';
 import MainSection from './MainSection';
 import ComicSection from './ComicSection';
 import YouTubeSection from './YouTubeSection';
@@ -25,6 +26,7 @@ function Dashboard() {
     <NavPage>
       <div className={classes.root}>
         <Grid container spacing={3}>
+          <CharactersSection classStyle={classes.paper}/>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
               <MainSection />
