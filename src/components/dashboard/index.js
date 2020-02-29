@@ -3,7 +3,9 @@ import NavPage from '../common/NavPage';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-
+import MainSection from './MainSection';
+import ComicSection from './ComicSection';
+import YouTubeSection from './YouTubeSection';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,13 +26,19 @@ function Dashboard() {
       <div className={classes.root}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Paper className={classes.paper}>Main Section</Paper>
+            <Paper className={classes.paper}>
+              <MainSection />
+            </Paper>
           </Grid>
           <Grid item xs={12} md={8} lg={9}>
-            <Paper className={classes.paper}>Comic Appearances</Paper>
+            <Paper className={classes.paper}>
+              <ComicSection />
+            </Paper>
           </Grid>
           <Grid item xs={12} md={4} lg={3}>
-            <Paper className={classes.paper}>YouTube Videos</Paper>
+            <Paper className={classes.paper}>
+              <YouTubeSection />
+            </Paper>
           </Grid>
         </Grid>
       </div>
