@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Paper, CircularProgress, Button } from '@material-ui/core';
-import { getCharacterComics, getCharacterEvents } from '../../actions/characters';
+import { getCharacterComics, getCharacterEvents, getYouTubeVideos } from '../../actions/characters';
 
 class CharactersSection extends React.PureComponent {
   render() {
@@ -10,6 +10,7 @@ class CharactersSection extends React.PureComponent {
       /* Make other calls for same character */
       getCharacterComics(id);
       getCharacterEvents(id);
+      getYouTubeVideos(name);
       this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' });
     }
 

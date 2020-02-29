@@ -48,3 +48,20 @@ export function getCharacterEvents(id) {
     store.dispatch({ type: 'SET_EVENTS_LOADING', payload: false });
   });
 }
+
+export function getYouTubeVideos(name) {
+  store.dispatch({ type: 'SET_VIDEOS_LOADING', payload: true });
+  return axios({
+    url: `https://www.googleapis.com/youtube/v3/search/`,
+    params: {
+      part: 'snippet',
+      key: 'AIzaSyAXHPX6gbbXVfi3RpN3XlKxWF_LS2bxPAk',
+      q: `marvel ${name}`,
+      maxResults: 3
+    },
+  }).then(({ data }) => {
+    console.log(data);
+    store.dispatch({ type: 'LOAD_VIDEOS', payload: data });
+    store.dispatch({ type: 'SET_VIDEOS_LOADING', payload: false });
+  });
+}

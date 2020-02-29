@@ -2,6 +2,7 @@ const initialState = {
   charactersLoading: false,
   comicsLoading: false,
   eventsLoading: false,
+  videosLoading: false,
   list: [],
   selectedCharacter: {},
   comics: [],
@@ -21,12 +22,16 @@ export default (state = initialState, action) => {
       return { ...state, comics: action.payload.data.results || [] };
     case 'LOAD_EVENTS':
       return { ...state, events: action.payload.data.results || [] };
+    case 'LOAD_VIDEOS':
+      return { ...state, ytVideos: action.payload.items || [] };
     case 'SET_CHARACTERS_LOADING':
       return { ...state, charactersLoading: action.payload };
     case 'SET_COMICS_LOADING':
       return { ...state, comicsLoading: action.payload };
     case 'SET_EVENTS_LOADING':
       return { ...state, eventsLoading: action.payload };
+    case 'SET_VIDEOS_LOADING':
+      return { ...state, videosLoading: action.payload };
     case 'CLEAR_CHARACTERS_LIST':
       return { ...state, list: [] };;
     default:
