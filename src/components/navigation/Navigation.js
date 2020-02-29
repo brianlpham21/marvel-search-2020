@@ -59,6 +59,9 @@ const useStyles = makeStyles(theme => ({
   clearButton: {
     color: 'rgba(255, 255, 255, 0.7) !important',
   },
+  clearCharacterButton: {
+    color: 'rgba(255, 255, 255, 0.9) !important',
+  },
   link: {
     color: 'white',
     '&:hover': {
@@ -110,6 +113,11 @@ function Navigation(props) {
             />
             <Button className={classes.clearButton} onClick={props.onClear}>
               Clear
+            </Button>
+          </div>
+          <div className={`ml-2 ${classes.search}`}>
+            <Button className={classes.clearCharacterButton} onClick={props.onCharacterClear}>
+              Clear Character Information
             </Button>
           </div>
           <div className={classes.aboutLinkContainer}>

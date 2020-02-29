@@ -17,11 +17,17 @@ class NavigationContainer extends React.PureComponent {
       this.props.dispatch({ type: 'CLEAR_CHARACTERS_LIST' })
     }
 
+    const handleCharacterClear = () => {
+      this.props.dispatch({ type: 'CLEAR' });
+      this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' });
+    }
+
     return (
       <Navigation
         searchTerm={this.props.searchTerm}
         onChange={(value) => handleInput(value)}
         onClear={() => handleClear()}
+        onCharacterClear={() => handleCharacterClear()}
       />
     );
   }

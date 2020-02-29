@@ -48,7 +48,9 @@ export default (state = initialState, action) => {
     case 'SET_VIDEOS_LOADING':
       return { ...state, videosLoading: action.payload };
     case 'CLEAR_CHARACTERS_LIST':
-      return { ...state, list: [] };;
+      return { ...state, list: [] };
+    case 'CLEAR':
+      return initialState;
     default:
       return state;
   }

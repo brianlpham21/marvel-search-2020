@@ -1,5 +1,5 @@
 import axios from 'axios';
-import store from '../store';
+import {store} from '../store';
 
 export function getCharacters(searchTerm) {
   store.dispatch({ type: 'SET_CHARACTERS_LOADING', payload: true });
