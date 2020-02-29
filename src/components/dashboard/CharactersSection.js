@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Grid, Paper, CircularProgress, Button } from '@material-ui/core';
+import { getCharacterComics } from '../../actions/characters';
 
 class CharactersSection extends React.PureComponent {
   render() {
     const handleClick = (name, id) => {
       this.props.dispatch({ type: 'SET_SELECTED_CHARACTER', payload: id });
       /* Make other calls for same character */
+      getCharacterComics(id);
       this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' });
     }
 

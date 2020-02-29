@@ -1,7 +1,10 @@
 const initialState = {
   charactersLoading: false,
-  selectedCharacter: {},
+  comicsLoading: false,
   list: [],
+  selectedCharacter: {},
+  comics: [],
+  ytVideos: [],
 };
 
 export default (state = initialState, action) => {
@@ -12,8 +15,12 @@ export default (state = initialState, action) => {
       const character = state.list.find((character) => character.id === action.payload);
       return { ...state, selectedCharacter: character, list: [] };
     }
+    case 'LOAD_COMICS':
+      return { ...state, comics: action.payload.data.results || [] };
     case 'SET_CHARACTERS_LOADING':
       return { ...state, charactersLoading: action.payload };
+    case 'SET_COMICS_LOADING':
+      return { ...state, comicsLoading: action.payload };
     case 'CLEAR_CHARACTERS_LIST':
       return { ...state, list: [] };;
     default:
