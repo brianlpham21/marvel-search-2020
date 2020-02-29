@@ -26,12 +26,8 @@ function Dashboard() {
     <NavPage>
       <div className={classes.root}>
         <Grid container spacing={3}>
-          <CharactersSection classStyle={classes.paper}/>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <MainSection />
-            </Paper>
-          </Grid>
+          <CharactersSection classStyle={classes.paper} />
+          <MainSection classStyle={classes.paper} />
           <Grid item xs={12} md={8} lg={9}>
             <Paper className={classes.paper}>
               <ComicSection />

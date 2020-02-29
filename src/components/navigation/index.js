@@ -6,7 +6,7 @@ import { getCharacters } from '../../actions/characters';
 class NavigationContainer extends React.PureComponent {
   render() {
     const handleInput = (value) => {
-      if (value.length > 2) {
+      if (value.length > 1) {
         getCharacters(value);
         this.props.dispatch({ type: 'UPDATE_SEARCH_TERM', payload: value })
       };
@@ -14,7 +14,7 @@ class NavigationContainer extends React.PureComponent {
 
     const handleClear = () => {
       this.props.dispatch({ type: 'CLEAR_SEARCH_TERM' })
-      this.props.dispatch({ type: 'CLEAR_CHARACTERS' })
+      this.props.dispatch({ type: 'CLEAR_CHARACTERS_LIST' })
     }
 
     return (
