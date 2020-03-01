@@ -106,7 +106,7 @@ function Navigation(props) {
       <AppBar position="fixed" style={{ zIndex: 10 }}>
         <Toolbar className={classes.toolBar}>
           <Typography variant="h6">
-            <Link to="/" className={classes.link} component={RouterLink}>
+            <Link to="/marvel-search-2020" className={classes.link} component={RouterLink}>
               <img class='logo' src={logo} className={classes.logo} alt='marvel-logo' />
             </Link>
             <span className={`ml-3 ${classes.navText}`}>Character Search</span>
