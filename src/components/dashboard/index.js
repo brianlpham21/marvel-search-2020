@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
   },
   paperFluid: {
     padding: theme.spacing(2),
-    textAlign: 'center',
     color: theme.palette.text.secondary,
     marginBottom: theme.spacing(2),
   }
@@ -35,8 +34,8 @@ function Dashboard() {
           <CharactersSection classStyle={classes.paper} />
           <MainSection classStyle={classes.paper} />
           <Grid item xs={12} md={8} lg={9}>
-            <ComicSection classStyle={classes.paperFluid} />
             <EventSection classStyle={classes.paperFluid} />
+            <ComicSection classStyle={classes.paperFluid} />
           </Grid>
           <YouTubeSection classStyle={classes.paperFluid} />
         </Grid>

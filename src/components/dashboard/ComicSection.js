@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Paper, CircularProgress } from '@material-ui/core';
+import { Grid, Paper, CircularProgress } from '@material-ui/core';
 
 class ComicSection extends React.PureComponent {
   render() {
@@ -14,9 +14,22 @@ class ComicSection extends React.PureComponent {
 
     return (
       <Paper className={this.props.classStyle}>
-        {this.props.comics.map((comic) => {
-          return (<div>{comic.title}</div>);
-        })}
+        <h4>Comic Book Appearances</h4>
+        <hr />
+        <Grid container spacing={1}>
+          {this.props.comics.map((comic) => {
+            const url = `${comic.thumbnail.path}.${comic.thumbnail.extension}`;
+            return (
+              <Grid item xs={12} md={8} lg={4} className="text-center">
+                <div>
+                  <img src={url} alt="comic_image" style={{ width: '50%' }}/>
+                </div>
+                <h6>{comic.title}</h6>
+                {comic.description}
+              </Grid>
+            );
+          })}
+        </Grid>
       </Paper>
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Paper, CircularProgress } from '@material-ui/core';
+import { Grid, Paper, CircularProgress } from '@material-ui/core';
 
 class EventSection extends React.PureComponent {
   render() {
@@ -14,9 +14,22 @@ class EventSection extends React.PureComponent {
 
     return (
       <Paper className={this.props.classStyle}>
-        {this.props.events.map((event) => {
-          return (<div>{event.title}</div>);
-        })}
+        <h4>Major Event Appearances</h4>
+        <hr />
+        <Grid container spacing={1}>
+          {this.props.events.map((event) => {
+            const url = `${event.thumbnail.path}.${event.thumbnail.extension}`;
+            return (
+              <Grid item xs={12} md={8} lg={4} className="text-center">
+                <div>
+                  <img src={url} alt="event_image" style={{ width: '50%' }}/>
+                </div>
+                <h6>{event.title}</h6>
+                {event.description}
+              </Grid>
+            );
+          })}
+        </Grid>
       </Paper>
     );
   }

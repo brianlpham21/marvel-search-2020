@@ -19,8 +19,15 @@ class YouTubeSection extends React.PureComponent {
       <Grid item xs={12} md={4} lg={3}>
         <Paper className={this.props.classStyle}>
           {this.props.ytVideos.map((video) => {
+            const url = video.snippet.thumbnails.default.url;
             return (
-              <div>{video.snippet.title}</div>
+              <div>
+                <div>
+                  <img src={url} alt="event_image" style={{ width: '50%' }}/>
+                </div>
+                <div>{video.snippet.title}</div>
+                {video.snippet.description}
+              </div>
             )
           })}
         </Paper>

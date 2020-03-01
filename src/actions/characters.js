@@ -60,7 +60,6 @@ export function getYouTubeVideos(name) {
       maxResults: 3
     },
   }).then(({ data }) => {
-    console.log(data);
     store.dispatch({ type: 'LOAD_VIDEOS', payload: data });
     store.dispatch({ type: 'SET_VIDEOS_LOADING', payload: false });
   });
