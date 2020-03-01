@@ -65,8 +65,8 @@ function About() {
                 <li>Reactstrap</li>
               </ul>
               <p>
-                Now, I understand that some of the technologies included in this might be seen as overkill
-                by some. But I wanted to experiment and see what worked together and what didn't.
+                I understand that some of the technologies included in this might be seen as overkill
+                by some,but I wanted to experiment and see what worked together and what didn't.
                 This application still remains an experiment, a sandbox project.
               </p>
             </Paper>
