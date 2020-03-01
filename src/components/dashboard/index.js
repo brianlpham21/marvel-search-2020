@@ -7,6 +7,7 @@ import MainSection from './MainSection';
 import ComicSection from './ComicSection';
 import EventSection from './EventSection';
 import YouTubeSection from './YouTubeSection';
+import VideoModal from '../common/VideoModal';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,6 +43,7 @@ function Dashboard() {
           <YouTubeSection classStyle={classes.paperFluid} />
         </Grid>
       </div>
+      <VideoModal />
     </NavPage>
   )
 }

@@ -94,7 +94,7 @@ function Navigation(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{ zIndex: 0 }}>
         <Toolbar className={classes.toolBar}>
           <Typography variant="h6">
             <Link to="/" className={classes.link} component={RouterLink}>

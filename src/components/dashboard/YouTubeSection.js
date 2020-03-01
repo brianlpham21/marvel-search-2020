@@ -4,9 +4,9 @@ import { Grid, Paper, CircularProgress, Button } from '@material-ui/core';
 
 class YouTubeSection extends React.PureComponent {
   render() {
-    const handleClick = () => {
-      this.props.dispatch({ type: 'SET_YOUTUBE_VIDEO', payload: 'yeah' });
-      this.props.dispatch({ type: 'TOGGLE_VIDEO_MODAL' });
+    const handleClick = (title, id) => {
+      this.props.dispatch({ type: 'SET_YOUTUBE_VIDEO', payload: { title, id } });
+      this.props.dispatch({ type: 'OPEN_VIDEO_MODAL' });
     }
 
     if (this.props.videosLoading) {
@@ -29,7 +29,7 @@ class YouTubeSection extends React.PureComponent {
             return (
               <div className="text-center">
                 <hr />
-                <Button style={{ width: '100%' }} onClick={() => handleClick()}>
+                <Button style={{ width: '100%' }} onClick={() => handleClick(video.snippet.title, video.id.videoId)}>
                   <img src={url} alt="event_image" style={{ width: '100%' }} />
                 </Button>
                 <h5 className="mt-2">{video.snippet.title}</h5>
