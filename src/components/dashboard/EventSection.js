@@ -1,16 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Paper, CircularProgress } from '@material-ui/core';
+import { Grid, Paper, CircularProgress, Link } from '@material-ui/core';
 
 class EventSection extends React.PureComponent {
   render() {
     if (this.props.eventsLoading) {
       return (
-        <Paper className={this.props.classStyle}>
+        <Paper className={`text-center ${this.props.classStyle}`}>
           <CircularProgress color="secondary" className="mt-2" />
         </Paper>
       )
-    } else if (this.props.events.length === 0) { return null; }
+    } else if (this.props.events.length === 0) {
+      if (this.props.noEvents) {
+        return (
+          <Grid item xs={12}>
+            <Paper className={`text-center ${this.props.classStyle}`}>
+              No Events Found.
+            </Paper>
+          </Grid>
+        )
+      }
+      return null;
+    }
 
     return (
       <Paper className={this.props.classStyle}>
@@ -21,11 +32,15 @@ class EventSection extends React.PureComponent {
             const url = `${event.thumbnail.path}.${event.thumbnail.extension}`;
             return (
               <Grid item xs={12} md={8} lg={4} className="text-center">
-                <div>
-                  <img src={url} alt="event_image" style={{ width: '50%' }}/>
-                </div>
-                <h6>{event.title}</h6>
-                {event.description}
+                <Link
+                  href={event.urls[0].url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={url} alt="event_image" style={{ width: '100%' }}/>
+                </Link>
+                <h5 className="mt-2">{event.title}</h5>
+                <p className="p-2">{event.description || 'No Description.'}</p>
               </Grid>
             );
           })}
@@ -38,6 +53,7 @@ class EventSection extends React.PureComponent {
 const mapStateToProps = store => ({
   events: store.characters.events,
   eventsLoading: store.characters.eventsLoading,
+  noEvents: store.characters.noEvents,
 });
 
 export default connect(mapStateToProps)(EventSection);

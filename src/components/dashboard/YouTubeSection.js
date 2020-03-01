@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Paper, CircularProgress } from '@material-ui/core';
+import { Grid, Paper, CircularProgress, Button } from '@material-ui/core';
 
 class YouTubeSection extends React.PureComponent {
   render() {
+    const handleClick = () => {
+      this.props.dispatch({ type: 'SET_YOUTUBE_VIDEO', payload: 'yeah' });
+      this.props.dispatch({ type: 'TOGGLE_VIDEO_MODAL' });
+    }
+
     if (this.props.videosLoading) {
       return (
         <Grid item xs={12} md={4} lg={3}>
-          <Paper className={this.props.classStyle}>
+          <Paper className={`text-center ${this.props.classStyle}`}>
             <CircularProgress color="secondary" className="mt-2" />
           </Paper>
         </Grid>
@@ -18,15 +23,17 @@ class YouTubeSection extends React.PureComponent {
     return (
       <Grid item xs={12} md={4} lg={3}>
         <Paper className={this.props.classStyle}>
+          <h5>YouTube Videos</h5>
           {this.props.ytVideos.map((video) => {
             const url = video.snippet.thumbnails.default.url;
             return (
-              <div>
-                <div>
-                  <img src={url} alt="event_image" style={{ width: '50%' }}/>
-                </div>
-                <div>{video.snippet.title}</div>
-                {video.snippet.description}
+              <div className="text-center">
+                <hr />
+                <Button style={{ width: '100%' }} onClick={() => handleClick()}>
+                  <img src={url} alt="event_image" style={{ width: '100%' }} />
+                </Button>
+                <h5 className="mt-2">{video.snippet.title}</h5>
+                <p className="">{video.snippet.description || 'No Description.'}</p>
               </div>
             )
           })}

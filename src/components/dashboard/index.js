@@ -11,6 +11,8 @@ import YouTubeSection from './YouTubeSection';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    paddingRight: theme.spacing(10),
+    paddingLeft: theme.spacing(10),
   },
   paper: {
     padding: theme.spacing(2),
