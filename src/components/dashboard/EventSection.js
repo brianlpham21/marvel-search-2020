@@ -40,7 +40,7 @@ class EventSection extends React.PureComponent {
                   <img src={url} alt="event_image" style={{ width: '100%' }}/>
                 </Link>
                 <h5 className="mt-2">{event.title}</h5>
-                <p className="p-2">{event.description || 'No Description.'}</p>
+                <p className="p-2" style={{ overflow: 'auto' }}>{event.description || 'No Description.'}</p>
               </Grid>
             );
           })}

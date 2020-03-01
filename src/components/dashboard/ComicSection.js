@@ -40,7 +40,7 @@ class ComicSection extends React.PureComponent {
                   <img src={url} alt="comic_image" style={{ width: '100%' }}/>
                 </Link>
                 <h5 className="mt-2">{comic.title}</h5>
-                <p className="p-2">{comic.description || 'No Description.'}</p>
+                <p className="p-2" style={{ overflow: 'auto' }}>{comic.description || 'No Description.'}</p>
               </Grid>
             );
           })}

@@ -25,15 +25,15 @@ class YouTubeSection extends React.PureComponent {
         <Paper className={this.props.classStyle}>
           <h5>YouTube Videos</h5>
           {this.props.ytVideos.map((video) => {
-            const url = video.snippet.thumbnails.default.url;
+            const url = video.snippet.thumbnails.high || video.snippet.thumbnails.medium || video.snippet.thumbnails.default;
             return (
               <div className="text-center">
                 <hr />
                 <Button style={{ width: '100%' }} onClick={() => handleClick(video.snippet.title, video.id.videoId)}>
-                  <img src={url} alt="event_image" style={{ width: '100%' }} />
+                  <img src={url.url} alt="event_image" style={{ width: '100%' }} />
                 </Button>
                 <h5 className="mt-2">{video.snippet.title}</h5>
-                <p className="">{video.snippet.description || 'No Description.'}</p>
+                <p style={{ overflow: 'auto' }}>{video.snippet.description || 'No Description.'}</p>
               </div>
             )
           })}
