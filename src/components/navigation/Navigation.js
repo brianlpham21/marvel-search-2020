@@ -109,7 +109,7 @@ function Navigation(props) {
             <Link to="/" className={classes.link} component={RouterLink}>
               <img class='logo' src={logo} className={classes.logo} alt='marvel-logo' />
             </Link>
-            <span className={`ml-3 ${classes.navText}`}>Character Sarch</span>
+            <span className={`ml-3 ${classes.navText}`}>Character Search</span>
           </Typography>
           <div className={`ml-4 ${classes.search}`}>
             <div className={classes.searchIcon}>
