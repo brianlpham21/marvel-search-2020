@@ -14,6 +14,9 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     paddingRight: theme.spacing(10),
     paddingLeft: theme.spacing(10),
+    [theme.breakpoints.down('lg')]: {
+      padding: theme.spacing(2),
+    },
   },
   paper: {
     padding: theme.spacing(2),
@@ -24,6 +27,12 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
     marginBottom: theme.spacing(2),
+  },
+  mainPhoto: {
+    display: 'flex',
+    [theme.breakpoints.down('xs')]: {
+      display: 'block',
+    },
   }
 }));
 
@@ -35,7 +44,7 @@ function Dashboard() {
       <div className={classes.root}>
         <Grid container spacing={3}>
           <CharactersSection classStyle={classes.paper} />
-          <MainSection classStyle={classes.paper} />
+          <MainSection classStyle={classes.paper} mainPhotoStyle={classes.mainPhoto} />
           <Grid item xs={12} md={8} lg={9}>
             <EventSection classStyle={classes.paperFluid} />
             <ComicSection classStyle={classes.paperFluid} />

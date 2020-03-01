@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   navText: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
     fontFamily: 'Marvel',
@@ -59,12 +59,21 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1, 1, 1, 7),
     transition: theme.transitions.create('width'),
     width: '100%',
+    [theme.breakpoints.down('xs')]: {
+      width: '150px',
+    },
   },
   clearButton: {
     color: 'rgba(255, 255, 255, 0.7) !important',
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
   },
   clearCharacterButton: {
     color: 'rgba(255, 255, 255, 0.9) !important',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   link: {
     color: 'white',
@@ -94,7 +103,7 @@ function Navigation(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" style={{ zIndex: 0 }}>
+      <AppBar position="fixed" style={{ zIndex: 10 }}>
         <Toolbar className={classes.toolBar}>
           <Typography variant="h6">
             <Link to="/" className={classes.link} component={RouterLink}>

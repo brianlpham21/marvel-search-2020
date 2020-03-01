@@ -8,7 +8,7 @@ class MainSection extends React.PureComponent {
     const { selectedCharacter } = this.props;
     return (
       <Grid item xs={12}>
-        <Paper className={`d-flex ${this.props.classStyle}`}>
+        <Paper className={`${this.props.mainPhotoStyle} ${this.props.classStyle}`}>
           <div>
             <img
               src={selectedCharacter.thumbnail.path + '.' + selectedCharacter.thumbnail.extension}

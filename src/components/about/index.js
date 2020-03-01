@@ -10,6 +10,12 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     paddingRight: theme.spacing(10),
     paddingLeft: theme.spacing(10),
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(4),
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(2),
+    },
   },
   paper: {
     padding: theme.spacing(4),

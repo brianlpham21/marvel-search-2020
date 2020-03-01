@@ -38,6 +38,7 @@ class CharactersSection extends React.PureComponent {
     return (
       <Grid item xs={12}>
         <Paper className={this.props.classStyle}>
+          <h6>Please Select a Character:</h6>
           {this.props.characters.map((character) => {
             return (
               <Button

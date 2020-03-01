@@ -31,7 +31,7 @@ class EventSection extends React.PureComponent {
           {this.props.events.map((event) => {
             const url = `${event.thumbnail.path}.${event.thumbnail.extension}`;
             return (
-              <Grid item xs={12} md={8} lg={4} className="text-center">
+              <Grid item sm={12} md={4} className="text-center">
                 <Link
                   href={event.urls[0].url}
                   target="_blank"
