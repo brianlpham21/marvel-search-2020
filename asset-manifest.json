@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/marvel-search-2020/static/css/main.e3069ce7.chunk.css",
+    "main.js": "/marvel-search-2020/static/js/main.1e45ed7b.chunk.js",
+    "main.js.map": "/marvel-search-2020/static/js/main.1e45ed7b.chunk.js.map",
+    "runtime-main.js": "/marvel-search-2020/static/js/runtime-main.8efccad5.js",
+    "runtime-main.js.map": "/marvel-search-2020/static/js/runtime-main.8efccad5.js.map",
+    "static/js/2.f1e83873.chunk.js": "/marvel-search-2020/static/js/2.f1e83873.chunk.js",
+    "static/js/2.f1e83873.chunk.js.map": "/marvel-search-2020/static/js/2.f1e83873.chunk.js.map",
+    "index.html": "/marvel-search-2020/index.html",
+    "precache-manifest.d416afab5b5940c63e8396049ab55c7b.js": "/marvel-search-2020/precache-manifest.d416afab5b5940c63e8396049ab55c7b.js",
+    "service-worker.js": "/marvel-search-2020/service-worker.js",
+    "static/css/main.e3069ce7.chunk.css.map": "/marvel-search-2020/static/css/main.e3069ce7.chunk.css.map",
+    "static/js/2.f1e83873.chunk.js.LICENSE.txt": "/marvel-search-2020/static/js/2.f1e83873.chunk.js.LICENSE.txt",
+    "static/media/Marvel_Animation_Logo.jpg": "/marvel-search-2020/static/media/Marvel_Animation_Logo.39ec8218.jpg",
+    "static/media/theme.scss": "/marvel-search-2020/static/media/Marvel_Comic_BG.addb1504.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8efccad5.js",
+    "static/js/2.f1e83873.chunk.js",
+    "static/css/main.e3069ce7.chunk.css",
+    "static/js/main.1e45ed7b.chunk.js"
+  ]
+}
