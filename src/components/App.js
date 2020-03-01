@@ -15,7 +15,7 @@ class App extends React.PureComponent {
         <React.Fragment>
           <NavigationContainer />
           <Switch>
-            <Route exact path="/" component={Dashboard} />
+            <Route path="/" component={Dashboard} />
             <Route exact path="/about" component={About} />
           </Switch>
         </React.Fragment>
